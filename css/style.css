@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #97bbaf;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.style{
+    width: 70px;
+    height: 70px;
+    background-color:bisque;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition-delay:0.8s;
+}
+.style.active{
+    width: 200px;
+    height:200px;
+    transition-delay:0s;
+}
+.style span{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #73cdcb;
+    transform: translate(calc(12px * var(--x)),calc(12px * var(--y)));
+    transition:transform 0.5s,width 0.5s, height 0.5s, background-color 0.5s;
+    transition-delay: calc(0.1s* var(--i));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.style.active span{
+    transform: translate(calc(60px * var(--x)),calc(60px * var(--y)));
+    width: 45px;
+    height: 45px;
+    background-color: #177b83;
+}
+.style span ion-icon{
+    transition: 0.5s;
+    font-size: 0em;
+}
+.style.active span  ion-icon{
+    font-size: 1.35em;
+    color: bisque;
+}
+.style.active span:hover  ion-icon{
+    color:#2dfc52;
+    filter: drop-shadow(0 0 2px #2dfc52)
+    drop-shadow(0 0 5px #2dfc52)
+    drop-shadow(0 0 15px #2dfc52);
+}
